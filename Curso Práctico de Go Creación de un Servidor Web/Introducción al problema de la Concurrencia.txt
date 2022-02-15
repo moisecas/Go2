@@ -1,0 +1,41 @@
+Introducción al problema de la Concurrencia
+Servidores.go
+
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"time"
+)
+
+func main() {
+	inicio := time.Now() //conocer tiempo de consulta 
+
+	servidores := []string{ //creación slice servidores
+		"http://uis.edu.co",
+		"http://facebook.com",
+		"http://instagram.com",
+		"http://linkedin.com",
+		"http://linkedin.com",
+		"http://sitioparaprobarerror.com",
+	}//ciclo para revisar los servidores
+       //se usa _ para evadir el primer dato que pide el ciclo que        no se necesita en este caso 
+	for _, servidor := range servidores {
+		revisarServidor(servidor)
+	}
+        //creo la variable que me dirá el tiempo de ejecución
+	tiempoPaso := time.Since(inicio)
+	fmt.Printf("tiempo de ejecución %s\n", tiempoPaso)
+        //imprimo con salto de linea \n 
+}
+
+func revisarServidor(servidor string) {
+	_, err := http.Get(servidor) //me devuelde dos datos por eso uso_ para evadir el primero ciclo for para manejo del error
+	if err != nil {
+		fmt.Println(servidor, "no disponible =(")
+	} else {
+		fmt.Println(servidor, "estamos onfire :)")
+	}
+
+}

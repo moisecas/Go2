@@ -1,0 +1,21 @@
+MAPS (Diccionarios en python o objetos en js) 
+
+package main
+
+import "fmt"
+
+func main() {
+	m1 := make(map[string]int)
+	m1["a"] = 8
+
+	
+
+	fmt.Println(m1)
+	fmt.Println(m1["a"])
+}
+
+map estructura llave valor, va a relacionar una llave que puede ser un numero hacia un valor string, por ejemplo. 
+Con make creamos el map, entre [] tipo de dato que queremos que sirva como llave y los vamos a mapear a tipo entero, es decir, todas las llaves de tipo string y que cuando las llame me va a mostrar de tipo entero int. 
+
+map[a:8] la llaves es a e imprime un int, el 8. 
+Go, fuertemente tipado, especificar tipo de dato llave y el tipo de dato valor. 

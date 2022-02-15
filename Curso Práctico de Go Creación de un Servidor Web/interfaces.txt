@@ -1,0 +1,64 @@
+interfaces
+
+se crea un struct por animal o variable
+con unas funciones indicamos como se están moviendo .
+
+La función recibe perro que es lo que entra a la función, nombre de la función y retorna un string, que es el mensaje en consola "". 
+
+func (perro) caminar() string {
+	return "soy un perro y camino"
+}
+
+se hace lo mismo con cada animal, para el ejemplo se especifica el tripo de movimiento correspondiente a cada animal. 
+
+Los instanciamos, citar las funciones y enviarles la variable correspondiente. 
+
+func main() {
+	p := perro{}
+	moverPerro(p)
+	pe := pez{}
+	nadarPez(pe)
+	pa := pajaro{}
+	volarPajaro(pa)
+
+}
+
+creamos una función por aparte que nos imprima que esta pasando con cada animal 
+
+func moverPerro(p perro) {
+	fmt.Println(p.caminar())
+}
+mover perro va a recibir un perro como parametro, imprimimos lo que caminar devuelve, caminar es la función declarada anteriormente. 
+
+Mejorar el cod y evitar repetición
+
+se crea una interfaz de esta forma, debajo del import 
+
+tipo, nombre e interface, adentro llevará una función, para el caso, se llama mover. 
+
+type animal interface {
+	mover() string
+}
+
+eliminamos el cod repetido relacionado con la impresión del movimiento del animal. 
+
+Y se crea una sola función relacionada con el movimiento 
+
+func moverAnimal(a animal) {
+	fmt.Println(a.mover())
+}
+esta va a recibir a animal que es la interface, e imprimira a que es la variable animal .mover que es la función que esta dentro de la interface creada. 
+
+se instancia al final, se cita la nueva función y no una por tipo de animal
+
+func main() {
+	p := perro{}
+	moverAnimal(p)
+	pe := pez{}
+	moverAnimal(pe)
+	pa := pajaro{}
+	moverAnimal(pa)
+
+}
+
+

@@ -1,0 +1,53 @@
+Structs y Receivers
+Practico: calculadora.go 
+
+Crear el struct 
+type calc struct {
+}
+
+Se requiere declarar la función
+func (calc) operate(entrada string, operador string) int
+el switch debe quedar dentro de la función 
+Hay que declarar dentro de las funciones las variables 
+
+hago una función donce cito el struct creado, nombre de la función y los datos que va a recibir incluido el tipo de dato que va a retornar o a mostrar, para el ejemplo retorna un int, recordar que go es tipado, hay que especificar el tipo de dato que va a tener involucrado en cada aspecto. 
+
+func (calc) operate(entrada string, operador string) int {
+	entradaLimpia := strings.Split(entrada, operador)
+	operador1 := parsear(entradaLimpia[0])
+	operador2 := parsear(entradaLimpia[1])
+
+	switch operador {
+	case "+":
+		fmt.Println(operador1 + operador2)
+		return operador1 + operador2
+	case "-":
+		fmt.Println(operador1 - operador2)
+		return operador1 - operador2
+	case "*":
+		fmt.Println(operador1 * operador2)
+		return operador1 * operador2
+	case "/":
+		fmt.Println(operador1 / operador2)
+		return operador1 / operador2
+	default:
+		fmt.Println(operador, "se me cayo el pelao")
+		return 0
+
+	}
+
+}
+Hay que tener en cuenta lo que retorna en cada función para evitar errores en el cod. 
+
+Llamar a parsear para convertir los datos 
+operador1:= parsear(entradalimpia [0]), se hace igual con el otro operador. 
+
+func leerEntrada() string {
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	return scanner.Text()
+
+}
+
+
+

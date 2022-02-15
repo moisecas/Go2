@@ -1,0 +1,6 @@
+Punteros 
+
+función nueva cambiar valor 
+Cambiar el valor de esa variable  
+&variable, imprime dirección en memoria 
+*variable, valor de la variable 

@@ -1,0 +1,11 @@
+GoRoutines 
+Todas al mismo tiempo. Agrupadas. Para evitar que el cod sea secuencial, así optimizamos.  
+
+Channels 
+Poder comunicar las goruitines. Trasmitir a las subrutinas 
+c <- "ok" canal c operador flecha "ok" 
+<-c atento y escuchando todo lo que pase por el canal 
+canal para transmitir la data entre las subrutinas 
+
+
+Implementación de Goroutines y channels  

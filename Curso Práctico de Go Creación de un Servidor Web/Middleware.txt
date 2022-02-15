@@ -1,0 +1,3 @@
+¿Qué es un Middleware? 
+
+Los middlewares son protectores de rutas, que nos permiten verificar condiciones antes de aceptar una petición

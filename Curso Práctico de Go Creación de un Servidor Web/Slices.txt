@@ -1,0 +1,49 @@
+Slices
+Algo mas dinamico, podemos modificar elementos, longitud de datos variable
+
+Practico listatareas.go 
+
+definimos un struct, al usar [] definimos que es un slices 
+
+luego se debe crear una función que permita agregar datos a los slices 
+func (t *taskList) agregarALista(tl *task) {
+	t.tasks = append(t.tasks, tl)
+
+}
+t * tasklist // con * apuntamos, recibe como parametro una tarea task struct
+t lista de tareas task propiedad en el struct, append tomara un parametro y lo va a agregar 
+
+
+Agregar el slices que queremos introducir al struct
+
+func main() {
+	t1 := &task{
+		nombre:      "completar curso",
+		descripcion: "completar el curso en esta semana",
+	}
+	t2 := &task{
+		nombre:      "completar curso 2",
+		descripcion: "completar el curso 2 en esta semana",
+	}
+	t3 := &task{
+		nombre:      "completar curso 3",
+		descripcion: "completar el curso 3 en esta semana",
+	}
+
+	lista := &taskList{
+		tasks: []*task{
+			t1, t2,
+		},
+	}
+	fmt.Println(lista.tasks[0])
+	lista.agregarALista(t3)
+	
+	lista.eliminarDeLista(1)
+	fmt.Println(len(lista.tasks))
+
+}
+
+len nos da la longitud de nuestro slice, cuantos elementos hay en ese momento 
+buscar el indice, elementos a la derecha o izquierda y lo eliminamos 
+
+ 

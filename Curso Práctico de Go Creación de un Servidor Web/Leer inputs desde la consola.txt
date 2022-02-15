@@ -1,0 +1,19 @@
+Leer inputs desde la consola
+
+definir el paquete, package main y una función nueva llamada main
+Para leer debemos usar una variable creada llamada scanner 
+con bufio con newscanner creamos una instancia para scaneo y le damos el imput. scanner := bufio.NewScanner(os.Stdin) 
+
+Variable llamada operación := scanner 
+al guardar nos va a importar las librerías que hemos usado. 
+Split una función como estring y fraccionarlo 
+
+al hacer esto nos concatenan 
+	fmt.Println(valores)
+	fmt.Println(valores[0] + valores[1])
+
+Para eso es necesario aplicar una transformación strconv.Atoi convierte a entero
+operador1, _ := strconv.Atoi(valores[0])
+operador2, _ := strconv.Atoi(valores[1])
+Se debe tener en cuenta que atoi devuelve dos valores no uno y se lo estamos asignando a uno, por eso lo solucionamos con _ por ahora. 
+Tener cuidado de enviarle datos numericos a la operación 

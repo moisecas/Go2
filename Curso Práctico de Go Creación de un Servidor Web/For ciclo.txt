@@ -1,0 +1,49 @@
+For: permite recorrer los valores 
+varaible i para ir controlando los indices, forma de obtener elemento especifico de la lista. Todos los indidices inician en 0, luego le decimos hasta donde queremos que llegue el primer segmento declaramos la variable i en el segundo le indicamos cuando parar y al final le decimos como va a decrecer 
+
+for i := 0; i < len(lista.tasks); i++ {
+		fmt.Println("index", i, "nombre", lista.tasks[i].nombre)
+	}
+Es necesario mandarlo en el print del ciclo debido a que va decreciendo. 
+
+range, iterador, cada ciclo vaya avanzando 
+
+for index, tarea := range lista.tasks {
+		fmt.Println("index", index, "nombre", tarea.nombre)
+
+	}
+
+Continue y break, break corta el ciclo, continue ignora la condición pero continua el ciclo 
+
+	for i := 0; i < 10; i++ {
+		if i == 5 {
+			continue // o break 
+		}
+		fmt.Println(i)
+
+	}
+con continue va a imprimir del 1 al 9 ignorando el 5, y con break solo imprime hasta 4. 
+
+
+FOR EN STRUCTS
+
+func (t *taskList) imprimirLista() {
+	for _, tarea := range t.tasks {
+		fmt.Println("nombre", tarea.nombre)
+		fmt.Println("descripcion", tarea.descripcion)
+	}
+}
+
+func (t *taskList) imprimirListaCompletados() {
+	for _, tarea := range t.tasks {
+		if tarea.completado {
+
+			fmt.Println("nombre", tarea.nombre)
+			fmt.Println("descripcion", tarea.descripcion)
+
+		}
+
+	} 
+
+
+ 

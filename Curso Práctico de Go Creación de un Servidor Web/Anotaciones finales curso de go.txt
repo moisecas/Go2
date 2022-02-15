@@ -1,0 +1,11 @@
+Anotaciones finales curso de go 
+
+log.Println: la url que intento en acceder y cuanto tiempo tarda en ejecutarse. 
+
+defer, permite a los desarrolladores retrasar la ejecución de una función hasta que regrese la función actual
+
+... permite enviar multiples Middlewares 
+
+usabilidad: validadción de inventario en proceso de compra online 
+
+validación del server en la app postman  

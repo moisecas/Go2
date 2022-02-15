@@ -1,0 +1,33 @@
+Imprimiendo el contenido de una Página Web usando Interfaces
+
+llamar a http dentro de la función main 
+http.get similar a colocar una dirección en el navegador 
+Devuelve dos valores, respuesta y un error(err) 
+fmt.Println(respuesta) para que importe las librerías que necesito. 
+Se necesita un if dentro para determinar que hacer con err 
+
+func main() {
+	respuesta, err := http.Get("http://techcentercol.com")
+	if err != nil {
+		fmt.Println(err)
+	}
+	e := escritorWeb{}
+	io.Copy(e, respuesta.Body)
+
+}
+respuesta.Body el cuerpo de la página, respuesta tiene varias cosas dentro, pero nos interesa en este caso el código. 
+
+copy función nativa de go, tiene dos parametros un escritor y un lector, escritor es una interface, debo crear una interface o struct que implemeten write. 
+
+write tiene como parametro un slice de tipo byte y devuelve dos valores un int y un err, deben retornar dentro de la función para evitar errores. 
+
+type escritorWeb struct {
+}
+
+func (escritorWeb) Write(p []byte) (int, error) {
+	fmt.Println(string(p))
+	return len(p), nil //devuelva la longitud de bytes
+}
+
+io.Copy para instanciar el escritor 
+e y el segundo parametro será el lector (es lo que viene de rta)  

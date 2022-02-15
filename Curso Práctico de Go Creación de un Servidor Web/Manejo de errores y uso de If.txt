@@ -1,0 +1,13 @@
+Manejo de errores y uso de If
+
+
+ Podemos agregar un if en medio de la función para verificar los posibles errores. 
+aotoi devuelve el entero y un error. 
+Para ello se debe crear una variable para confirmar, para el ejemplo la variale se llama err1. 
+
+if err1 != nil {
+  fmt.Println(operador1) 
+}
+ //nil es el valor nulo, como si nunca existiera 
+
+de esa forma validamos el error dentro de la función. 

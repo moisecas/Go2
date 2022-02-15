@@ -1,0 +1,16 @@
+Comandos básicos GO. 
+
+go build compila el archivo que le indico 
+go run para ejecutar el archivo 
+go mod sirve para los modulos, exportar los cod. 
+
+Func main necesaria 
+
+DECLARACIÓN DE VARIABLES 
+var nombrevariable string o tipo de variable
+var mensaje string="hola" 
+
+o se puede así, es la forma mas popular 
+mensajeFacil := "hola" 
+
+Para exportar una función en go, es necesario que inicie en mayuscula.
